@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "diggusmaximus",
-  "version": "1.5.9-1.20",
+  "version": "1.5.9+1.21",
   "name": "Diggus Maximus",
   "description": "Mine ores more better!",
   "authors": [
@@ -31,8 +31,8 @@
     ]
   },
   "depends": {
-    "fabricloader": ">=0.12.5",
-    "fabric": "*",
-    "java": ">=17"
+    "fabricloader": ">=0.15.11",
+    "fabric-api": "*",
+    "java": ">=21"
   }
 }

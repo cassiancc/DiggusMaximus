@@ -22,11 +22,11 @@ public class Blacklist implements AbstractConfigFile {
             if (entry.startsWith("#")) {
                 entry = entry.replaceAll("#", "");
 
-                TagHelper.getBlockIDsInTag(new Identifier(entry)).forEach(identifier -> {
+                TagHelper.getBlockIDsInTag(Identifier.tryParse(entry)).forEach(identifier -> {
                     lookup.add(identifier.toString());
                 });
 
-            } else lookup.add((new Identifier(entry)).toString());
+            } else lookup.add((Identifier.of(entry)).toString());
         });
     }
 }

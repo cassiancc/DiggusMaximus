@@ -2,14 +2,11 @@ package net.kyrptonaught.diggusmaximus;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.kyrptonaught.diggusmaximus.client.DiggusKeyBinding;
 import net.kyrptonaught.diggusmaximus.config.Blacklist;
 import net.kyrptonaught.diggusmaximus.config.BlockCategory;
 import net.kyrptonaught.diggusmaximus.config.ConfigOptions;
 import net.kyrptonaught.diggusmaximus.config.ExcavatingShapes;
 import net.kyrptonaught.kyrptconfig.config.ConfigManager;
-import net.kyrptonaught.kyrptconfig.config.CustomSerializer;
-import net.kyrptonaught.kyrptconfig.keybinding.CustomKeyBinding;
 import net.minecraft.util.Identifier;
 
 public class DiggusMaximusMod implements ModInitializer {
@@ -29,6 +26,7 @@ public class DiggusMaximusMod implements ModInitializer {
             getGrouping().generateLookup();
             getBlackList().generateLookup();
         });
+        StartExcavatePacket.registerSendPacket();
         StartExcavatePacket.registerReceivePacket();
     }
 
